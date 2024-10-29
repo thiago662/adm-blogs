@@ -1,0 +1,28 @@
+<!-- <p>detail works!</p> -->
+
+<!-- @if (id == 'add') {
+    <button type="button" (click)="saveHtml()">Salvar</button>
+    
+    <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+    
+    <h5 class="html-header">HTML Output</h5>
+    
+    <div class="html">
+        {{ htmlContent }}
+    </div>
+    
+    <div [innerHtml]="htmlContent"></div>
+}
+@else { -->
+<form [formGroup]="postForm" (ngSubmit)="onSubmitToCreate()">
+    <h3>{{ postForm.value.id }}</h3>
+    
+    <label class="form-label" for="title">Nome</label>
+
+    <input type="text" class="form-control" id="title" formControlName="title" required>
+
+    <angular-editor formControlName="html" [config]="config"></angular-editor>
+    
+    <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Salvar</button>
+</form>
+<!-- } -->

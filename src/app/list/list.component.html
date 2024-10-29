@@ -1,0 +1,14 @@
+<!-- <p>list works!</p> -->
+
+<button [routerLink]="['/post/add']">criar novo</button>
+
+@for (list of lists; track $index) {
+    <h3>{{ list?.title }}</h3>
+    <p>{{ list?.id }}</p>
+    <button [routerLink]="['/post/' + list?.id]">{{ list?.id }}</button>
+    <!-- <div [innerHtml]="list?.html ?? null"></div> -->
+    {{ list | json }}
+}
+@empty {
+    <p>Nada</p>
+}
